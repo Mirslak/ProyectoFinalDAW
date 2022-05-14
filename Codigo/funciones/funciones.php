@@ -8,6 +8,15 @@ function consulta_usuario($conexion, $usuario, $password){
     return $resultado;
 }
 
+function consulta_correo($conexion, $email){
+
+    $consulta = "SELECT `password` FROM `usuario` WHERE `email` = '$email'";
+ 
+    $resultado = mysqli_query($conexion, $consulta);
+
+    return $resultado;
+}
+
 function crearSesion($usuario){
     //Queremos que el id de sesión sea su usuario
     session_id($usuario['user']);
