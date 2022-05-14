@@ -148,12 +148,25 @@ error_reporting(E_ALL);
             </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="input-group has-validation input-group-sm">
                 <span class="input-group-text" id="inputGroupPrepend">DNI</span>
                 <input name="dni" type="text" class="form-control" id="dni" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                  Por favor, escriba su dni.
+                 </div>
+            </div>
+            <div class="valid-feedback">
+            Correcto!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="input-group has-validation input-group-sm">
+                <span class="input-group-text" id="inputGroupPrepend">Teléfono</span>
+                <input name="telefono" type="text" class="form-control" id="telefono" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                 Por favor, escriba su telefono.
                  </div>
             </div>
             <div class="valid-feedback">
@@ -236,6 +249,7 @@ error_reporting(E_ALL);
         $dni = $_POST["dni"];
         $direccion = $_POST['direccion'];
         $Cpostal = $_POST['Cpostal'];
+        $telefono = $_POST['telefono'];
 
         //Por defecto el usuario registrado tendrá rol de usuario = 0
         $rol_usuario=0;
@@ -243,7 +257,7 @@ error_reporting(E_ALL);
         include_once('../mail/mail.php');
 
         if($enviado){
-        $query = "INSERT into usuario (user, password, nombre, apellido1, apellido2, email, dni, direccion,CodigoPOstal,usuario_verificado,rol_usuario,token) VALUES ('$user','$password','$nombre','$apellido1','$apellido2','$email','$dni','$direccion','$Cpostal','1','$rol_usuario','$token')";
+        $query = "INSERT into usuario (user, password, nombre, apellido1, apellido2, email, telefono,dni, direccion,CodigoPOstal,usuario_verificado,rol_usuario,token) VALUES ('$user','$password','$nombre','$apellido1','$apellido2','$email','$telefono','$dni','$direccion','$Cpostal','1','$rol_usuario','$token')";
         $result = mysqli_query($conexion, $query);
         
             

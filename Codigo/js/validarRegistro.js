@@ -81,8 +81,8 @@ function validarUsuario() {
   }
 
   function validarEmail() {
-    const email = document.querySelector('#correo');
-    const expresion = /^[A-Za-z_0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{2,6}$/;
+    const email = document.querySelector('#email');
+    const expresion = /^[A-Za-z_0-9.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{2,6}$/;
     if (expresion.test(email.value)) {
       email.classList.remove('is-invalid');
       email.classList.add('is-valid');
